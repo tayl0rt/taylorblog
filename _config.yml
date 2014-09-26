@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Hexo Configuration
 ## Docs: http://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
@@ -13,7 +12,7 @@ language:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://
+url: http://tayl0rt.github.io
 root: /
 permalink: :year/:month/:day/:title/
 tag_dir: tags
@@ -80,18 +79,16 @@ disqus_shortname:
 # Extensions
 ## Plugins: https://github.com/hexojs/hexo/wiki/Plugins
 ## Themes: https://github.com/hexojs/hexo/wiki/Themes
+#You can edit the color scheme in source/css/_base/variable.styl
 theme: personadark
 exclude_generator:
+photo: /icon.jpg
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: github
   repository: https://github.com/tayl0rt/tayl0rt.github.io.git
-=======
-#You can eidt the color scheme in source/css/_base/variable.styl
-
-photo: /icon.jpg
 
 email:
 twitter:
@@ -122,8 +119,7 @@ bighomepage: true
 #Use cdnjs' CDN
 usecdn: false
 
-google_analytics: UA-46393541-1
-rss: /atom.xml
+google_analytics:
+rss:
 
 forvirgo: true
->>>>>>> d90df897f11fca8df6d2f696b32d487be7d46622
