@@ -48,7 +48,7 @@ h3 {
 }
 a {
   text-decoration: none;
-  color: #063;
+  color: #66185f;
 }
 a:hover {
   text-decoration: underline;
@@ -111,7 +111,7 @@ a:hover {
   width: 500px;
 }
 p {
-  text-indent: 2em;
+  text-indent: 0em;
 }
 #header-fix {
   height: 25px;
@@ -389,7 +389,7 @@ article header .icon {
   position: absolute;
   top: 16px;
   left: 20px;
-  color: #696;
+  color: #905a99;
 }
 article header .icon:hover {
   color: #6d6d6d;
@@ -418,7 +418,7 @@ article header time {
 article header .title {
   font-weight: normal;
   display: inline;
-  color: #696;
+  color: #905a99;
 }
 @media screen and (max-width: 450px) {
   article header .title {
@@ -426,10 +426,10 @@ article header .title {
   }
 }
 article header .title a {
-  color: #696;
+  color: #905a99;
 }
 article header .title a:hover {
-  color: #063;
+  color: #66185f;
   text-decoration: none;
 }
 article .entry {
@@ -596,7 +596,7 @@ article footer a {
   color: #999;
 }
 article footer a:hover {
-  color: #063;
+  color: #66185f;
   text-decoration: none;
 }
 article footer a:before {
@@ -955,10 +955,10 @@ margin-bottom 50px {
   font-size: 100%;
 }
 .entry .gist .gist-file .gist-meta a {
-  color: #063;
+  color: #66185f;
 }
 .entry .gist .gist-file .gist-meta a:visited {
-  color: #063;
+  color: #66185f;
 }
 figure.highlight {
   background: #f1f1f1;

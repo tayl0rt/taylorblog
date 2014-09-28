@@ -1917,6 +1917,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   animation-timing-function: ease-in;
 }
 
+
+
+/************************************************
+
+Commenting out animated icon.jpg code - don't like it
+
+begins on line 1922, ends 2384
+*************************************************
+
+
 @-webkit-keyframes rotateIn {
   0% {
     -webkit-transform-origin: center center;
@@ -2366,6 +2376,17 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   -webkit-animation-name: rotateOutUpRight;
   animation-name: rotateOutUpRight;
 }
+
+**************************************
+
+End of commenting to get rid of animated icon.jpg
+
+begins on line 1922, ends 2384
+*************************************/
+
+
+
+
 
 @-webkit-keyframes slideInDown {
   0% {
