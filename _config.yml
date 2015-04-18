@@ -120,7 +120,7 @@ bighomepage: true
 #Use cdnjs' CDN
 usecdn: false
 
-google_analytics:
+google_analytics: UA-41763113-2
 rss:
 
 forvirgo: true

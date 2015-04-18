@@ -33,7 +33,7 @@ bighomepage: true
 #Use cdnjs' CDN
 usecdn: false
 
-google_analytics: UA-46393541-1
+google_analytics: UA-41763113-2
 rss: /atom.xml
 
 forvirgo: true
