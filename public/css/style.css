@@ -10,6 +10,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-weight: 300;
 }
 body {
   background: #f1f1f1;
@@ -451,9 +452,9 @@ article .entry .video-container {
   margin-top: 15px;
 }
 article .entry blockquote {
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-  font-family: "Georgia", serif;
+/*border-top 1px solid color-border
+      border-bottom 1px solid color-border*/
+  font-family: font-family "Helvetica Neue", "Helvetica", Arial, sans-serif;
   padding: 0 20px 15px;
 }
 article .entry blockquote footer {
@@ -748,7 +749,7 @@ article footer .addthis iframe {
   color: #5d5d5d;
   position: relative;
   text-align: center;
-  bottom: -49.3%;
+  bottom: -38.3%;
   margin: 0 auto;
   max-width: 80%;
   font-size: 12px;
@@ -821,10 +822,7 @@ article footer .addthis iframe {
   content: "\f16d";
 }
 .html5 {
-  font: 1.1em FontAwesome;
-}
-.html5:before {
-  content: "\f13b";
+  font: sans-serif;
 }
 .html5 .widget {
   background: #fff;
@@ -913,7 +911,7 @@ article footer .addthis iframe {
 #footer {
   color: #999;
 }
-margin-bottom 50px {
+\margin-bottom 50px {
   font: 0.9em/1.6 "Lato", Helvetica Neue, Helvetica, Arial, sans-serif;
   text-shadow: 0 0 1px #fff;
 }

@@ -106,7 +106,7 @@
         new_text = old_text.replace(/([\u3040-\u312f\u3200-\u32ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff])([<\[\{\(]+(.*?)[>\]\}\)]+)([\u3040-\u312f\u3200-\u32ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff])/ig, '$1 $2 $4');
         text = new_text;
         if (old_text === new_text) {
-            // 前面<後面 --> 前面 < 後面
+            // 前面<後面 --=""> 前面 < 後面
             text = text.replace(/([\u3040-\u312f\u3200-\u32ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff])([<>\[\]\{\}\(\)])/ig, '$1 $2');
             text = text.replace(/([<>\[\]\{\}\(\)])([\u3040-\u312f\u3200-\u32ff\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff])/ig, '$1 $2');
         }
@@ -349,3 +349,4 @@
     };
 
 }(window.pangu = window.pangu || {}));
+</script></body></title></space_sensitive_tags></tag></字></\[\{\(]+)(\s*)(.*?)(\s*)([></後面></\[\{\(]+(.*?)[></字></字>

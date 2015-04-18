@@ -5,7 +5,7 @@
 # Site
 title: taylorThompson()
 subtitle:
-description: Welcome! I'm a student developer, and this is my blog. I use Linux and JavaScript mostly so I may tend to post about those two topics more often than others.
+description: Welcome! I'm a student developer, and this is my blog. I am really into JavaScript and Angular so I may tend to post about those two topics more often than others.
 author: Taylor Thompson
 email: taylort1230@gmail.com
 language:
@@ -83,11 +83,12 @@ disqus_shortname:
 theme: personadark
 exclude_generator:
 photo: /icon.jpg
+favicon: /favicon.png
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
-  type: github
+  type: git
   repository: https://github.com/tayl0rt/tayl0rt.github.io.git
 
 email:

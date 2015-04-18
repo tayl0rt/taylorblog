@@ -13,7 +13,7 @@
   <title>taylorThompson()</title>
   <meta name="author" content="Taylor Thompson">
   
-  <meta name="description" content="Welcome! I&#39;m a student developer, and this is my blog. I use Linux and JavaScript mostly so I may tend to post about those two topics more often than others.">
+  <meta name="description" content="Welcome! I&#39;m a student developer, and this is my blog. I am really into JavaScript and Angular so I may tend to post about those two topics more often than others.">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -87,7 +87,7 @@ alert("Please Update Your IE \n请升级您的IE浏览器");
     <figcaption>
       <h3 class=>Taylor Thompson</h3>
       <p></p>
-			<p>Welcome! I'm a student developer, and this is my blog. I use Linux and JavaScript mostly so I may tend to post about those two topics more often than others.</p>
+			<p>Welcome! I'm a student developer, and this is my blog. I am really into JavaScript and Angular so I may tend to post about those two topics more often than others.</p>
     </figcaption>
   </figure>
   <section class="social">
@@ -109,9 +109,9 @@ alert("Please Update Your IE \n请升级您的IE浏览器");
   </section>
 </div>
 <div class="theme-info">
-  <a target="_blank" href="https://github.com/heruoxin/hexo-persona-color" class="html5"> This site made possible thanks to Github Pages - Node.js - Hexo.io [Persona Dark Theme] </a> 
-  &copy; - 2014 Taylor Thompson
-  
+	<p class="html5"> This site made possible thanks to Github Pages - Node.js - Hexo.io [Persona Dark Theme] </p> 
+	&copy; - 2015 Taylor Thompson
+	
 </div>
 </aside>
   <div id="content" class="inner">
@@ -122,15 +122,101 @@ alert("Please Update Your IE \n请升级您的IE浏览器");
       <div class="post-content animated fadeIn">
         <header>
             
-              <div class="icon depth"><a href="/2014/09/25/Got-it-all-set-up/"> </a></div>
-              <h2 class="depth title" ><a class="animated" href="/2014/09/25/Got-it-all-set-up/">Got it all set up! Hexo.io is pretty sweet.</a></h2>
+              <div class="icon depth"><a href="/2015/04/18/Fun-with-Angular-data-binds/"> </a></div>
+              <h2 class="depth title" ><a class="animated" href="/2015/04/18/Fun-with-Angular-data-binds/">Fun with Angular data binds</a></h2>
             
-            <time class="time title depth" datetime="2014-09-26T01:04:00.000Z">Sep 25 2014</time>
+            <time class="time title depth" datetime="2015-04-18T15:59:10.000Z">Apr 18 2015</time>
           </header>
       </div>
     </article>
   </div>
 
+  <div class="archive titlelist">
+    <article class="post">
+      <div class="post-content animated fadeIn">
+        <header>
+            
+              <div class="icon depth"><a href="/2015/04/17/Got-it-all-set-up/"> </a></div>
+              <h2 class="depth title" ><a class="animated" href="/2015/04/17/Got-it-all-set-up/">Got it all set up! Hexo.io is pretty sweet.</a></h2>
+            
+            <time class="time title depth" datetime="2015-04-18T01:04:00.000Z">Apr 17 2015</time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+
+
+
+  <div class="animated fadeIn" idplus="FunwithAngulardatabinds" style="display: none;">
+    <div idplusp="FunwithAngulardatabinds">
+      <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img s1c="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2015-04-18T15:59:10.000Z"><a href="#">Apr 18 2015</a></time>
+      
+      
+  
+    <h1 class="depth title">Fun with Angular data binds</h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h2 id="Alright!_Let’s_take_a_look_at_some_fun_in_AngularJS-">Alright! Let’s take a look at some fun in AngularJS.</h2><p>This is definitely going to be a little on the basic side, but that’s intentional. I struggled to understand some of the core concepts in AngularJS and as usual sought examples, videos, etc.</p>
+<p>I think for a lot of people, the AH HAH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!… <em>ahem</em> moments happen when you sit down and finally take an hour or two to bang out some code.</p>
+<p>Maybe you’ve had a few things start to click and you really have that smile on your face because you’re starting to understand, and to me THAT is the time to write. Don’t just read about it and forget to try it!</p>
+<h2 id="So_what’s_this_all_about?">So what’s this all about?</h2><p>Alright so when we take a look at a forms of user input. We’re used to let’s say filling out the quantity of an item we are purchasing and then hitting add to cart for example. That’s what popped in my head with this particular example. I’m not trying to say the example pertains to that line of thinking, but the opposite actually. If the quantity is left blank maybe the form won’t process, right? Stick with me here…</p>
+<blockquote>
+<p>“<em>it’s really all about context</em>“</p>
+</blockquote>
+<p>I’m big on actually trying things out like I said before and as a friend of mine encouraged me to think once, it’s really all about context. This is tough when you’re learning something new because things have no context, and the newer you are (myself included for sure), the harder it is to find context or reasons to code at all. </p>
+<p>The below example is the product of me simply wondering if (and being pretty damn sure that) you could allow the user to control the data, in a way that would trigger events on the page itself. It’s one thing to bind an element and an input box, so when you type Hello John, it fills the element with the text ‘Hello John’, and it’s another thing… to say I want a function to trigger, but conditional only if <em>this</em> is equal to <em>this</em> and only if <em>that</em> actually has happened, AND I want the user to have control over it.</p>
+<p>But when I say it’s one thing, then it’s another thing…. that might sound a little embellishing towards the latter thing. It’s not, this doesn’t have to be your magnum opus, and it shouldn’t necessarily take you 2 days to finish it. In fact it’s the opposite, if you can’t find a good tutorial on making directives in AngularJS… Open up a file and try to make a directive, lol.</p>
+<p>It may amount to nothing more than you seeing how things could interact in AngularJS; my hope is you will take away at the very least the way the following works (hopefully by you messing with it):</p>
+<pre><code><span class="variable">ng-model=</span><span class="string">""</span> <span class="variable">ng-click=</span><span class="string">""</span> <span class="variable">ng-show=</span><span class="string">"</span>
+</code></pre><h3 id="So_let’s_take_a_look_at_this:">So let’s take a look at this:</h3><pre><code>&lt;h2 <span class="variable">id=</span><span class="string">"text-to-show"</span> <span class="variable">ng-show=</span><span class="string">"userInputCheck()"</span>&gt;You are able to see me! Everything checks out!&lt;/h2&gt;
+      &lt;input <span class="variable">id=</span><span class="string">"checkbox"</span> <span class="variable">type=</span><span class="string">"checkbox"</span> <span class="variable">ng-model=</span><span class="string">"checked"</span>/&gt;
+      &lt;input <span class="variable">id=</span><span class="string">"user-input"</span> <span class="variable">type=</span><span class="string">"text"</span> <span class="variable">ng-model=</span><span class="string">"userInput"</span>/&gt;
+</code></pre><p>So absolutely this is trivial if you <em>did not</em> have the user input text field. You’d just have a piece of hidden text that’s triggered to show if the checkbox is checked.</p>
+<p>You could also have a two part way of messing with it - Checkbox is checked and the hidden text shows AND a user input field to determine what that hidden text actually is.</p>
+<p>What I went for was hidden text being shown not only on one condition, but two. What this does is simply require a <em>tad</em> more thinking, and a wee bit more code involved. It’s a step above trivial without making you slam your head against the wall.</p>
+<h3 id="Walking_lasts_until_you_realize_you’re_running-">Walking lasts until you realize you’re running.</h3><p>You don’t run after you walk in coding. You simply reach the AH HAH moment and realize you’re mid-run. These things can have a snowball effect, so the point of this article really is to demonstrate when you’re frustrated with tutorials that don’t make sense… or can’t find the best examples online, don’t give up. Just keep going and keep coding and google until you’re eyes bleed. One day you’ll wake up and have a brilliant idea that however trivial in the grand scheme of things, will boost your confidence tremendously as you overcome the challenge you’ve set for <em>yourself</em>.</p>
+<h3 id="This_is_it!">This is it!</h3><p>Alrighty head over to <a href="https://github.com/tayl0rt/angularDataBindExample" target="_blank" rel="external">https://github.com/tayl0rt/angularDataBindExample</a> and take a look at what I’m talking about code wise. If you don’t want to then at least take away the overall point - <em>don’t forget to actually write code</em>. Thank you!</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+      
+    </div>
+  </div>
 
 
 
@@ -154,7 +240,7 @@ alert("Please Update Your IE \n请升级您的IE浏览器");
     <header>
       
         <div class="icon depth"></div>
-        <time class="depth" datetime="2014-09-26T01:04:00.000Z"><a href="#">Sep 25 2014</a></time>
+        <time class="depth" datetime="2015-04-18T01:04:00.000Z"><a href="#">Apr 17 2015</a></time>
       
       
   
@@ -164,10 +250,11 @@ alert("Please Update Your IE \n请升级您的IE浏览器");
     </header>
     <div class="entry depth">
       
-        <h2 id="Hello_There!">Hello There!</h2>
-<p>This is basically taylorthompson.net part deux, sans a lot of dead weight (in my opinion.) For what I use a blog for it just made more sense to get off of WordPress, when my focus is really JavaScript and Node.js offers a static generated blogging platform - Hexo.io</p>
+        <h2 id="Hello_There!">Hello There!</h2><p>This is basically taylorthompson.net part deux, sans a lot of dead weight (in my opinion.) For what I use a blog for it just made more sense to get off of WordPress, when my focus is really JavaScript and Node.js offers a static generated blogging platform - Hexo.io</p>
 <p>If you’re unfamiliar with Node.js then you may want to consider watching a presentation or two and reading through the docs. It’s built on the V8 JS engine that lives inside of Chrome. Node.js is a very powerful platform from which you can build a wide variety of things. Node’s focus is on a single thread that handles all I/O.</p>
-<p>Node.js operates on an event loop, instead of threads, and Node kind of exploits the fact that servers can continue to perform operations while handling the I/O requests.</p>
+<p>Node.js operates on an event loop, instead of threads, and Node kind of exploits the fact that servers can continue to perform operations while handling the I/O requests. I won’t go into a lot of Node detail, I have a lot to learn and it’s a lot to explain haha.</p>
+<p>The biggest focus for me as a developer right now is Angular! Please check out Angular by Google to learn more, it’s a wonderful framework and there’s a lot of buzz in the community right now for it.</p>
+<p>More to come!</p>
 
       
     </div>

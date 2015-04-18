@@ -14,12 +14,11 @@
     $.getJSON(url, function(json){
       var result = '';
 
-      for (var i=0, len=json.length; i<len; i++){
-        var item = json[i];
-        result += '<li>' + linkify(item.text) + '<small>' + moment(item.created_at).fromNow() + '</small></li>';
+      for (var i=0, len=json.length; i<len; i++){="" var="" item="json[i];" result="" +="<li>" linkify(item.text)="" '<small="">' + moment(item.created_at).fromNow() + '';
       }
 
       $('#tweets').html(result);
     });
   });
 })(jQuery);
+</len;>

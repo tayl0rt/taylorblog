@@ -824,10 +824,7 @@ if (!document.createElement('canvas').getContext) {
     var H = 10;
 
     // For some reason that I've now forgotten, using divs didn't work
-    vmlStr.push(' <g_vml_:group',
-                ' coordsize="', Z * W, ',', Z * H, '"',
-                ' coordorigin="0,0"' ,
-                ' style="width:', W, 'px;height:', H, 'px;position:absolute;');
+    vmlStr.push(' <g_vml_:group', '="" coordsize="', Z * W, ',', Z * H, '" ',="" coordorigin="0,0" ,="" style="width:', W, 'px;height:', H, 'px;position:absolute;');
 
     // If filters are necessary (rotation exists), create them
     // filters are bog-slow, so only create them if abbsolutely necessary
@@ -858,25 +855,12 @@ if (!document.createElement('canvas').getContext) {
 
       vmlStr.push('padding:0 ', mr(max.x / Z), 'px ', mr(max.y / Z),
                   'px 0;filter:progid:DXImageTransform.Microsoft.Matrix(',
-                  filter.join(''), ", sizingmethod='clip');");
-
-    } else {
-      vmlStr.push('top:', mr(d.y / Z), 'px;left:', mr(d.x / Z), 'px;');
-    }
-
-		var opacity = ~~(this.globalAlpha * 100);
-    vmlStr.push(' ">' ,
-                '<g_vml_:image src="', image.src, '"',
-                ' style="width:', Z * dw, 'px;',
+                  filter.join(''), " sizingmethod="clip" );");="" }="" else="" {="" vmlstr.push('top:',="" mr(d.y="" z),="" 'px;left:',="" mr(d.x="" 'px;');="" var="" opacity="~~(this.globalAlpha" *="" 100);="" vmlstr.push('="" "="">' ,
+                '<g_vml_:image src="', image.src, '" ',="" '="" style="width:', Z * dw, 'px;',
                 ' height:', Z * dh, 'px;',
                 ' -ms-filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=', opacity, ');',
-                ' filter:alpha(opacity=', opacity, ')"',
-                ' cropleft="', sx / w, '"',
-                ' croptop="', sy / h, '"',
-                ' cropright="', (w - sx - sw) / w, '"',
-                ' cropbottom="', (h - sy - sh) / h, '"',
-                ' />',
-                '</g_vml_:group>');
+                ' filter:alpha(opacity=', opacity, ')" cropleft="', sx / w, '" croptop="', sy / h, '" cropright="', (w - sx - sw) / w, '" cropbottom="', (h - sy - sh) / h, '">',
+                '');
 
     this.element_.insertAdjacentHTML('BeforeEnd', vmlStr.join(''));
   };
@@ -888,13 +872,7 @@ if (!document.createElement('canvas').getContext) {
     var W = 10;
     var H = 10;
 
-    lineStr.push('<g_vml_:shape',
-                 ' filled="', !!aFill, '"',
-                 ' style="position:absolute;width:', W, 'px;height:', H, 'px;"',
-                 ' coordorigin="0,0"',
-                 ' coordsize="', Z * W, ',', Z * H, '"',
-                 ' stroked="', !aFill, '"',
-                 ' path="');
+    lineStr.push('<g_vml_:shape', '="" filled="', !!aFill, '" ',="" style="position:absolute;width:', W, 'px;height:', H, 'px;" coordorigin="0,0" coordsize="', Z * W, ',', Z * H, '" stroked="', !aFill, '" path="');
 
     var newSeq = false;
     var min = {x: null, y: null};
@@ -963,7 +941,7 @@ if (!document.createElement('canvas').getContext) {
       appendFill(this, lineStr, min, max);
     }
 
-    lineStr.push('</g_vml_:shape>');
+    lineStr.push('');
 
     this.element_.insertAdjacentHTML('beforeEnd', lineStr.join(''));
   };
@@ -981,13 +959,7 @@ if (!document.createElement('canvas').getContext) {
     }
 
     lineStr.push(
-      '<g_vml_:stroke',
-      ' opacity="', opacity, '"',
-      ' joinstyle="', ctx.lineJoin, '"',
-      ' miterlimit="', ctx.miterLimit, '"',
-      ' endcap="', processLineCap(ctx.lineCap), '"',
-      ' weight="', lineWidth, 'px"',
-      ' color="', color, '" />'
+      '<g_vml_:stroke', '="" opacity="', opacity, '" ',="" joinstyle="', ctx.lineJoin, '" miterlimit="', ctx.miterLimit, '" endcap="', processLineCap(ctx.lineCap), '" weight="', lineWidth, 'px" color="', color, '">'
     );
   }
 
@@ -1063,34 +1035,21 @@ if (!document.createElement('canvas').getContext) {
 
       // When colors attribute is used, the meanings of opacity and o:opacity2
       // are reversed.
-      lineStr.push('<g_vml_:fill type="', fillStyle.type_, '"',
-                   ' method="none" focus="100%"',
-                   ' color="', color1, '"',
-                   ' color2="', color2, '"',
-                   ' colors="', colors.join(','), '"',
-                   ' opacity="', opacity2, '"',
-                   ' g_o_:opacity2="', opacity1, '"',
-                   ' angle="', angle, '"',
-                   ' focusposition="', focus.x, ',', focus.y, '" />');
+      lineStr.push('<g_vml_:fill type="', fillStyle.type_, '" ',="" '="" method="none" focus="100%" color="', color1, '" color2="', color2, '" colors="', colors.join(','), '" opacity="', opacity2, '" g_o_:opacity2="', opacity1, '" angle="', angle, '" focusposition="', focus.x, ',', focus.y, '">');
     } else if (fillStyle instanceof CanvasPattern_) {
       if (width && height) {
         var deltaLeft = -min.x;
         var deltaTop = -min.y;
-        lineStr.push('<g_vml_:fill',
-                     ' position="',
+        lineStr.push('<g_vml_:fill', '="" position="',
                      deltaLeft / width * arcScaleX * arcScaleX, ',',
-                     deltaTop / height * arcScaleY * arcScaleY, '"',
-                     ' type="tile"',
-                     // TODO: Figure out the correct size to fit the scale.
-                     //' size="', w, 'px ', h, 'px"',
-                     ' src="', fillStyle.src_, '" />');
+                     deltaTop / height * arcScaleY * arcScaleY, '" ',="" type="tile" todo:="" figure="" out="" the="" correct="" size="" to="" fit="" scale.="" src="', fillStyle.src_, '">');
        }
     } else {
       var a = processStyle(ctx.fillStyle);
       var color = a.color;
       var opacity = a.alpha * ctx.globalAlpha;
       lineStr.push('<g_vml_:fill color="', color, '" opacity="', opacity,
-                   '" />');
+                   '">');
     }
   }
 
@@ -1266,9 +1225,7 @@ if (!document.createElement('canvas').getContext) {
 
     var d = getCoords(this, x + offset.x, y + offset.y);
 
-    lineStr.push('<g_vml_:line from="', -left ,' 0" to="', right ,' 0.05" ',
-                 ' coordsize="100 100" coordorigin="0 0"',
-                 ' filled="', !stroke, '" stroked="', !!stroke,
+    lineStr.push('<g_vml_:line from="', -left ,' 0" to="', right ,' 0.05" ',="" '="" coordsize="100 100" coordorigin="0 0" filled="', !stroke, '" stroked="', !!stroke,
                  '" style="position:absolute;width:1px;height:1px;">');
 
     if (stroke) {
@@ -1284,14 +1241,13 @@ if (!document.createElement('canvas').getContext) {
 
     var skewOffset = mr(d.x / Z) + ',' + mr(d.y / Z);
 
-    lineStr.push('<g_vml_:skew on="t" matrix="', skewM ,'" ',
-                 ' offset="', skewOffset, '" origin="', left ,' 0" />',
-                 '<g_vml_:path textpathok="true" />',
+    lineStr.push('<g_vml_:skew on="t" matrix="', skewM ,'" ',="" '="" offset="', skewOffset, '" origin="', left ,' 0">',
+                 '<g_vml_:path textpathok="true">',
                  '<g_vml_:textpath on="true" string="',
                  encodeHtmlAttribute(text),
                  '" style="v-text-align:', textAlign,
                  ';font:', encodeHtmlAttribute(fontStyleString),
-                 '" /></g_vml_:line>');
+                 '"></g_vml_:textpath></g_vml_:path></g_vml_:skew></g_vml_:line>');
 
     this.element_.insertAdjacentHTML('beforeEnd', lineStr.join(''));
   };
@@ -1419,3 +1375,4 @@ if (!document.createElement('canvas').getContext) {
 })();
 
 } // if
+</g_vml_:fill></g_vml_:fill',></g_vml_:fill></g_vml_:stroke',></g_vml_:shape',></g_vml_:image></g_vml_:group',></canvas>
