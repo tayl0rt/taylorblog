@@ -34,7 +34,7 @@ Refer to the [MongoDB documentation for mongodump / mongorestore](https://docs.m
 
 Terminal command: 
 
-	mongorestore —host hostname --port 27017 —username username —password password -d database -c 		collection /path/to/backup/file.ext
+	mongorestore —host hostname --port 27017 —username username —password password -d database -c collection /path/to/backup/file.ext
 MONGO_URL for connecting mup to remote mongo instance:
 
 	"MONGO_URL" : "mongodb://username:password@servername:port/database"

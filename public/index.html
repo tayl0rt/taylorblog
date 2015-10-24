@@ -13,7 +13,7 @@
   <title>taylorThompson()</title>
   <meta name="author" content="Taylor Thompson">
   
-  <meta name="description" content="Welcome! I&#39;m a student developer, and this is my blog. I am really into JavaScript and Angular so I may tend to post about those two topics more often than others.">
+  <meta name="description" content="Welcome! I like technology a lot. I&#39;ve been writing code off and on since I was 11, but nowadays I&#39;ve become a big javascript guy, and I&#39;ve always loved Linux. You&#39;ll find me in St. Petersburg, FL!">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -87,7 +87,7 @@ alert("Please Update Your IE \n请升级您的IE浏览器");
     <figcaption>
       <h3 class=>Taylor Thompson</h3>
       <p></p>
-			<p>Welcome! I'm a student developer, and this is my blog. I am really into JavaScript and Angular so I may tend to post about those two topics more often than others.</p>
+			<p>Welcome! I like technology a lot. I've been writing code off and on since I was 11, but nowadays I've become a big javascript guy, and I've always loved Linux. You'll find me in St. Petersburg, FL!</p>
     </figcaption>
   </figure>
   <section class="social">
@@ -122,6 +122,20 @@ alert("Please Update Your IE \n请升级您的IE浏览器");
       <div class="post-content animated fadeIn">
         <header>
             
+              <div class="icon depth"><a href="/2015/10/24/MongoDB-backup-and-restore-from-local-to-remote/"> </a></div>
+              <h2 class="depth title" ><a class="animated" href="/2015/10/24/MongoDB-backup-and-restore-from-local-to-remote/">MongoDB backup from local and restore on remote</a></h2>
+            
+            <time class="time title depth" datetime="2015-10-24T16:27:50.000Z">Oct 24 2015</time>
+          </header>
+      </div>
+    </article>
+  </div>
+
+  <div class="archive titlelist">
+    <article class="post">
+      <div class="post-content animated fadeIn">
+        <header>
+            
               <div class="icon depth"><a href="/2015/04/18/Fun-with-Angular-data-binds/"> </a></div>
               <h2 class="depth title" ><a class="animated" href="/2015/04/18/Fun-with-Angular-data-binds/">Fun with Angular data binds</a></h2>
             
@@ -145,6 +159,79 @@ alert("Please Update Your IE \n请升级您的IE浏览器");
     </article>
   </div>
 
+
+
+
+  <div class="animated fadeIn" idplus="MongoDBbackupfromlocalandrestoreonremote" style="display: none;">
+    <div idplusp="MongoDBbackupfromlocalandrestoreonremote">
+      <article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img s1c="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon depth"></div>
+        <time class="depth" datetime="2015-10-24T16:27:50.000Z"><a href="#">Oct 24 2015</a></time>
+      
+      
+  
+    <h1 class="depth title">MongoDB backup from local and restore on remote</h1>
+  
+
+    </header>
+    <div class="entry depth">
+      
+        <h3 id="Backing_up_and_restoring_local_mongo_to_remote,_and_then_connecting_remote_mongo_to_MeteorUP…_in_a_nutshell">Backing up and restoring local mongo to remote, and then connecting remote mongo to MeteorUP… in a nutshell</h3><h4 id="So_to_fill_you_in…">So to fill you in…</h4><p>I found myself feeling that I had too much going on locally, and hadn’t taken the journey into remote hosting of really any kind… This is obviously important from a DevOps standpoint, and an important skill we can all have. Whether you are just getting your feet wet, or are a seasoned developer - you will always find yourself referencing stackoverflow, google, tech documentation, etc. So these are my notes from the task of migrating a DB from local to remote (mongodb), and then adding my mongo url into MeteorUP, so that my test meteor application successfully connected to the remote mongodb for it’s data! Let’s begin.</p>
+<h5 id="Installing/running_mongo_in_relation_to_mongo_itself,_and_also_Meteor-js">Installing/running mongo in relation to mongo itself, and also Meteor.js</h5><p>Mongo Documentation was very helpful in understanding the differences in the mongo versions (2.4, 2.6, 3.0). Meteor JS info is available as well - Mongo runs it’s own separate instance on it’s own port. Your main source of help on this topic are going to be the [Mongodb docs] (<a href="https://docs.mongodb.org/manual/" target="_blank" rel="external">https://docs.mongodb.org/manual/</a>), and google/stackoverflow because everyone’s mongo version and meteor configs, etc, are possibly going to vary. </p>
+<h5 id="Start_to_get_into_setting_up_users,_and_learn_about_users_and_roles">Start to get into setting up users, and learn about users and roles</h5><p>Had to use the admin db in mongo - type in the mongo shell: </p>
+<pre><code><span class="keyword">use</span> admin 
+</code></pre><p>and <a href="https://docs.mongodb.org/manual/tutorial/add-admin-user/" target="_blank" rel="external">Create an Administrative User with Unrestricted Access</a>, and then was able to use:</p>
+<pre><code><span class="title">show</span> dbs
+</code></pre><p><a href="https://docs.mongodb.org/manual/tutorial/manage-users-and-roles/" target="_blank" rel="external">and create a user inside any database</a> using: </p>
+<pre><code><span class="keyword">use</span> databaseName 
+</code></pre><p>with it’s own set of control/privileges.</p>
+<h5 id="Configure_mongo_to_accept_remote_connections_if_not_already">Configure mongo to accept remote connections if not already</h5><p>So far have taken the comment approach (less secure) where you comment out the bind_ip line in mongod.conf file. This may be a good starting point <a href="http://www.mkyong.com/mongodb/mongodb-allow-remote-access/" target="_blank" rel="external">here</a>.</p>
+<h5 id="Back_up_and_restore_mongo_from_local_to_remote">Back up and restore mongo from local to remote</h5><p>Refer to the <a href="https://docs.mongodb.org/manual/tutorial/backup-and-restore-tools/" target="_blank" rel="external">MongoDB documentation for mongodump / mongorestore</a>. I did have success using mongodump and mongorestore! These next pieces of code were key:</p>
+<p>Terminal command: </p>
+<pre><code>mongorestore —<span class="keyword">host</span> <span class="built_in">hostname</span> --port <span class="number">27017</span> —username username —<span class="literal">password</span> <span class="literal">password</span> -d database -c         collection /<span class="built_in">path</span>/to/<span class="literal">backup</span>/<span class="keyword">file</span>.ext
+</code></pre><p>MONGO_URL for connecting mup to remote mongo instance:</p>
+<pre><code><span class="string">"MONGO_URL"</span> : <span class="string">"mongodb://username:password<span class="variable">@servername</span>:port/database"</span>
+</code></pre><h5 id="Re-deploy_test_Meteor_App_with_a_remote_mongodb_connected">Re-deploy test Meteor App with a remote mongodb connected</h5><p>Include the above “MONGO_URL” in your mup.json file and at this point remember to double check node, mongo, and phantomJS booleans and adjust as necessary!</p>
+<h5 id="And_finally_-">And finally -</h5><p>Run<br>    mup [ reconfig / setup / deploy ]<br>as needed, Success!</p>
+<h3 id="Here_are_a_few_more_links_I_want_to_leave_for_support_on_this_issue_-">Here are a few more links I want to leave for support on this issue -</h3><p><a href="https://github.com/arunoda/meteor-up" target="_blank" rel="external">MeteorUP</a></p>
+<p><a href="http://stackoverflow.com/questions/18216712/cannot-authenticate-into-mongo-auth-fails" target="_blank" rel="external">StackOverflow page on Mongodb Error 18 - Auth fails</a></p>
+<p><a href="http://stackoverflow.com/questions/24899849/connection-refused-to-mongodb-errno-111" target="_blank" rel="external">StackOverflow page on Mongodb Error 111</a></p>
+<p>Those may be useful along the way, even if just to get the old brain workin’. </p>
+<h3 id="Take_care_for_now!">Take care for now!</h3>
+      
+    </div>
+    <footer>
+      
+        
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+      
+    </div>
+  </div>
 
 
 
